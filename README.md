@@ -90,7 +90,7 @@ can be memory hungry too, especially with large messages.
 
 You can decide to delete the messages from the source mailbox after a
 successful transfer (it is a good feature when migrating). In that case,
-use the ```--delete``` ```--expunge1``` options.
+use the ```--delete --expunge1``` options.
 
 You can also just synchronize a mailbox A from another mailbox B in case
 you just want to keep a "live" copy of B in A.
@@ -109,19 +109,19 @@ The original imapsync code comes from Gilles LAMIRAL and was under the GPL
 until this version. Then he changed it to away from the GPL, because he want
 to test a new business model. Good idea and with a price about 5 EUR/USD
 everyone would buy it, but the real price 42 EUR (ca. 50 USD) is a unbounded
-cheek. This is microsoft like! So I took the latest GPL licensed code from
+cheek. This feels like microsoft! So I took the latest GPL licensed code from
 the Ubuntu 10.04 package repos and forked it on github.
 
 EXAMPLE
 -------
 
 While working on imapsync parameters please run imapsync in dry mode (no
-modification induced) with the --dry option. Nothing bad can be done
+modification induced) with the ```--dry``` option. Nothing bad can be done
 this way.
 
-To synchronize the imap account "buddy" on host "imap.src.fr" to the
-imap account "max" on host "imap.dest.fr" (the passwords are located in
-two files "/etc/secret1" for "buddy", "/etc/secret2" for "max"):
+To synchronize the imap account ```buddy``` on host ```imap.src.fr``` to the
+imap account ```max``` on host ```imap.dest.fr``` (the passwords are located in
+two files ```/etc/secret1``` for ```buddy```, ```/etc/secret2``` for ```max```):
 
     imapsync --host1 imap.src.fr  --user1 buddy --passfile1 /etc/secret1 \
               --host2 imap.dest.fr --user2 max   --passfile2 /etc/secret2
@@ -133,7 +133,7 @@ SECURITY
 
 You can use ```--password1``` instead of ```--passfile1``` to give the password but
 it is dangerous because any user on your host can see the password by
-using the ```ps auxwwww``` command. Using a variable (like $PASSWORD1) is
+using the ```ps auxwwww``` command. Using a variable (like ```$PASSWORD1```) is
 also dangerous because of the ```ps auxwwwwe``` command. So, saving the
 password in a well protected file (600 or rw-------) is the best
 solution.
@@ -284,7 +284,7 @@ are useful to know the softwares. Example:
     From software:* OK louloutte Cyrus IMAP4 v1.5.19 server ready
     To   software:* OK Courier-IMAP ready
 
-You can use option --justconnect to get those lines. Example:
+You can use option ```--justconnect``` to get those lines. Example:
 
     imapsync --host1 imap.troc.org --host2 imap.trac.org --justconnect
 
@@ -320,22 +320,22 @@ Feel free to hack imapsync as the GPL Licence permits it.
 SIMILAR SOFTWARES
 -----------------
 
-- imap_tools    : http://www.athensfbc.com/imap_tools
-- offlineimap   : http://software.complete.org/offlineimap
-- mailsync      : http://mailsync.sourceforge.net/
-- imapxfer      : http://www.washington.edu/imap/
+- imap_tools     : http://www.athensfbc.com/imap_tools
+- offlineimap    : http://software.complete.org/offlineimap
+- mailsync       : http://mailsync.sourceforge.net/
+- imapxfer       : http://www.washington.edu/imap/
   part of the imap-utils from UW.
-- mailutil      : replace imapxfer in 
+- mailutil       : replace imapxfer in 
   part of the imap-utils from UW.
   http://www.gsp.com/cgi-bin/man.cgi?topic=mailutil
-- imaprepl      : http://www.bl0rg.net/software/
+- imaprepl       : http://www.bl0rg.net/software/
   http://freshmeat.net/projects/imap-repl/
-- imap_migrate  : http://freshmeat.net/projects/imapmigration/
-- imapcopy      : http://home.arcor.de/armin.diehl/imapcopy/imapcopy.html
-- migrationtool : http://sourceforge.net/projects/migrationtool/
-- imapmigrate   : http://sourceforge.net/projects/cyrus-utils/
-- wonko_imapsync: http://wonko.com/article/554
+- imap_migrate   : http://freshmeat.net/projects/imapmigration/
+- imapcopy       : http://home.arcor.de/armin.diehl/imapcopy/imapcopy.html
+- migrationtool  : http://sourceforge.net/projects/migrationtool/
+- imapmigrate    : http://sourceforge.net/projects/cyrus-utils/
+- wonko_imapsync : http://wonko.com/article/554
   see also tools/wonko_ruby_imapsync
-- pop2imap      : http://www.linux-france.org/prj/pop2imap/
+- pop2imap       : http://www.linux-france.org/prj/pop2imap/
 
 Feedback (good or bad) will always be welcome.
