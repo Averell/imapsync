@@ -16,8 +16,14 @@ INSTALL
 imapsync works fine under any Unix OS with perl.
 imapsync works fine under Windows (2000, XP) and ActiveState's 5.8 Perl
 
-Get imapsync at
-https://github.com/patkar/imapsync
+Get imapsync at https://github.com/patkar/imapsync
+Clone the git repo or download a tarball from the download section.
+
+You'll find a compressed tarball called imapsync-x.xx.tar.gz
+where x.xx is the version number. Untar the tarball where
+you want (on Unix):
+
+    tar xzvf  imapsync-x.xx.tar.gz
 
 SYNOPSIS
 --------
