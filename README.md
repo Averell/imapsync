@@ -90,11 +90,7 @@ can be memory hungry too, especially with large messages.
 
 You can decide to delete the messages from the source mailbox after a
 successful transfer (it is a good feature when migrating). In that case,
-<<<<<<< HEAD
 use the ```--delete``` ```--expunge1``` options.
-=======
-use the --delete --expunge1 options.
->>>>>>> 60cdec63673f516f846d0ba74d2be0b68d3a3158
 
 You can also just synchronize a mailbox A from another mailbox B in case
 you just want to keep a "live" copy of B in A.
@@ -135,44 +131,25 @@ Then, you will have max's mailbox updated from buddy's mailbox.
 SECURITY
 --------
 
-<<<<<<< HEAD
 You can use ```--password1``` instead of ```--passfile1``` to give the password but
 it is dangerous because any user on your host can see the password by
 using the ```ps auxwwww``` command. Using a variable (like $PASSWORD1) is
 also dangerous because of the ```ps auxwwwwe``` command. So, saving the
-=======
-You can use --password1 instead of --passfile1 to give the password but
-it is dangerous because any user on your host can see the password by
-using the 'ps auxwwww' command. Using a variable (like $PASSWORD1) is
-also dangerous because of the 'ps auxwwwwe' command. So, saving the
->>>>>>> 60cdec63673f516f846d0ba74d2be0b68d3a3158
 password in a well protected file (600 or rw-------) is the best
 solution.
 
 imapsync is not totally protected against sniffers on the network since
 passwords may be transferred in plain text if CRAM-MD5 is not supported
-<<<<<<< HEAD
 by your imap servers. Use ```--ssl1``` and ```--ssl2``` to enable encryption on
-=======
-by your imap servers. Use --ssl1 and --ssl2 to enable encryption on
->>>>>>> 60cdec63673f516f846d0ba74d2be0b68d3a3158
 host1 and host2.
 
 You may authenticate as one user (typically an admin user), but be
 authorized as someone else, which means you don't need to know every
-<<<<<<< HEAD
 user's personal password. Specify ```--authuser1 "adminuser"``` to enable this
 on host1. In this case, ```--authmech1 PLAIN``` will be used by default since
 it is the only way to go for now. So don't use ```--authmech1 SOMETHING```
 with ```--authuser1 "adminuser"```, it will not work. Same behavior with the
 ```--authuser2``` option.
-=======
-user's personal password. Specify --authuser1 "adminuser" to enable this
-on host1. In this case, --authmech1 PLAIN will be used by default since
-it is the only way to go for now. So don't use --authmech1 SOMETHING
-with --authuser1 "adminuser", it will not work. Same behavior with the
---authuser2 option.
->>>>>>> 60cdec63673f516f846d0ba74d2be0b68d3a3158
 
 EXIT STATUS
 -----------
@@ -221,21 +198,12 @@ made of keywords summary, not too long (one visible line).
 Help us to help you: in your report, please include:
 
 - imapsync version.
-<<<<<<< HEAD
 - output given with ```--debug --debugimap``` near the failure point.
   Isolate a message in a folder 'BUG' and use ```--folder 'BUG'```
 - imap server software on both side and their version number.
 - imapsync with all the options you use,  the full command line
   you use (except the passwords of course). 
 - ```IMAPClient.pm``` version.
-=======
-- output given with --debug --debugimap near the failure point.
-  Isolate a message in a folder 'BUG' and use --folder 'BUG'
-- imap server software on both side and their version number.
-- imapsync with all the options you use,  the full command line
-  you use (except the passwords of course). 
-- IMAPClient.pm version.
->>>>>>> 60cdec63673f516f846d0ba74d2be0b68d3a3158
 - operating system running imapsync.
 - operating systems on both sides and the third side in case
   you run imapsync on a foreign host from the both.
@@ -323,7 +291,6 @@ You can use option --justconnect to get those lines. Example:
 HUGE MIGRATION
 --------------
 
-<<<<<<< HEAD
 Pay special attention to options ```--subscribed``` ```--subscribe``` ```--delete```
 ```--delete2``` ```--expunge``` ```--expunge1``` ```--expunge2``` ```--uidexpunge2``` ```--maxage```
 ```--minage``` ```--maxsize``` ```--useheader``` ```--fast```
@@ -333,17 +300,6 @@ program. Write a file called ```users.csv``` (for example) containing users and
 passwords. The separator used in this example is ';'
 
 The ```users.csv``` file contains:
-=======
-Pay special attention to options --subscribed --subscribe --delete
---delete2 --expunge --expunge1 --expunge2 --uidexpunge2 --maxage
---minage --maxsize --useheader --fast
-
-If you have many mailboxes to migrate think about a little shell
-program. Write a file called file.csv (for example) containing users and
-passwords. The separator used in this example is ';'
-
-The file.csv file contains:
->>>>>>> 60cdec63673f516f846d0ba74d2be0b68d3a3158
 
     user0001;password0001;user0002;password0002
     user0011;password0011;user0012;password0012 ...
@@ -352,11 +308,7 @@ And the shell program is just:
 
     { while IFS=';' read  u1 p1 u2 p2; do 
            imapsync --user1 "$u1" --password1 "$p1" --user2 "$u2" --password2 "$p2" ...
-<<<<<<< HEAD
     done ; } < users.csv
-=======
-    done ; } < file.csv
->>>>>>> 60cdec63673f516f846d0ba74d2be0b68d3a3158
 
 Welcome in shell programming !
 
@@ -368,7 +320,6 @@ Feel free to hack imapsync as the GPL Licence permits it.
 SIMILAR SOFTWARES
 -----------------
 
-<<<<<<< HEAD
 - imap_tools    : http://www.athensfbc.com/imap_tools
 - offlineimap   : http://software.complete.org/offlineimap
 - mailsync      : http://mailsync.sourceforge.net/
@@ -386,19 +337,5 @@ SIMILAR SOFTWARES
 - wonko_imapsync: http://wonko.com/article/554
   see also tools/wonko_ruby_imapsync
 - pop2imap      : http://www.linux-france.org/prj/pop2imap/
-=======
-imap_tools    : http://www.athensfbc.com/imap_tools
-offlineimap   : http://software.complete.org/offlineimap
-mailsync      : http://mailsync.sourceforge.net/
-imapxfer      : http://www.washington.edu/imap/
-mailutil      : replace imapxfer in 
-imaprepl      : http://www.bl0rg.net/software/
-imap_migrate  : http://freshmeat.net/projects/imapmigration/
-imapcopy      : http://home.arcor.de/armin.diehl/imapcopy/imapcopy.html
-migrationtool : http://sourceforge.net/projects/migrationtool/
-imapmigrate   : http://sourceforge.net/projects/cyrus-utils/
-wonko_imapsync: http://wonko.com/article/554
-pop2imap      : http://www.linux-france.org/prj/pop2imap/
->>>>>>> 60cdec63673f516f846d0ba74d2be0b68d3a3158
 
 Feedback (good or bad) will always be welcome.
